@@ -33,4 +33,4 @@ If you have the AWS CLI installed, then you can use the aws configure command to
 ### Script Arguments
 
 - `--user-pool-id` [__Required__] - The user pool ID for the user pool on which the export should be performed
-- `-attr` or `--export-attributes` [__Required__] - List of Attributes that will be saved in CSV file
+- `-attr` or `--export-attributes` [__Required__] - List of Attributes that will be saved into the CSV file

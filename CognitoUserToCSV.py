@@ -37,19 +37,13 @@ def get_list_cognito_users(cognito_idp_cliend, next_pagination_token):
     print ("Execute client list_users")
     return cognito_idp_cliend.list_users(
         UserPoolId=USER_POOL_ID,
-        AttributesToGet=[
-            'sub', 
-            'email',
-        ],
-        Limit=LIMIT
+        Limit=LIMIT,
+        Filter='cognito:user_status = "UNCONFIRMED"'
     ) if next_pagination_token == "" else cognito_idp_cliend.list_users(
         UserPoolId=USER_POOL_ID,
-        AttributesToGet=[
-            'sub', 
-            'email', 
-        ],
         Limit=LIMIT,
-        PaginationToken=next_pagination_token
+        PaginationToken=next_pagination_token,
+        Filter='cognito:user_status = "UNCONFIRMED"'
     )
 
 csv_new_line = {REQUIRED_ATTRIBUTE[i]: '' for i in range(len(REQUIRED_ATTRIBUTE))}
