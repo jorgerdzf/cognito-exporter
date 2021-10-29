@@ -26,7 +26,7 @@ If you have the AWS CLI installed, then you can use the aws configure command to
 
 ## Run export
 
-- `$ python3 CognitoUserToCSV.py  --user-pool-id 'us-west-2_l7tLkMfWs' -attr sub email`
+- `$ python3 CognitoUserToCSV.py  --user-pool-id 'us-west-2_PoolID' -attr sub email`
 - Wait until you see output `INFO: End of Cognito User Pool reached`
 - Find file `CognitoUsers.csv` that contains all exported users.
 
